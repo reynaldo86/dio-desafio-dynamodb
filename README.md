@@ -133,7 +133,7 @@ aws dynamodb update-item \
     --return-values ALL_NEW
 ```
 
-- Comando para Excluir a tabela.
+- Comando para Excluir a tabela por meio do AWS Cli.
 
 ```
 aws dynamodb delete-table --table-name Music
