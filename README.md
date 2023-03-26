@@ -121,3 +121,21 @@ aws dynamodb query \
     --key-condition-expression "SongTitle = :v_song and SongYear = :v_year" \
     --expression-attribute-values  '{":v_song":{"S":"Wasting Love"},":v_year":{"S":"1992"} }'
 ```
+
+- Atualizar o título do álbum do item na tabela Music
+
+```
+aws dynamodb update-item \
+    --table-name Music \
+    --key '{ "Artist": {"S": "Iron Maiden"}, "SongTitle": {"S": "Fear of the Dark"}}' \
+    --update-expression "SET AlbumTitle = :Fear of the Dark Tour" \
+    --expression-attribute-values '{":Fear of the Dark Tour":{"S":"Updated Album Title"}}' \
+    --return-values ALL_NEW
+```
+
+- Comando para Excluir a tabela.
+
+```
+aws dynamodb delete-table --table-name Music
+```
+
